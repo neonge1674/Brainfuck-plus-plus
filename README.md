@@ -7,4 +7,11 @@ Brainfuck++ is meant to be a superset of original brainfuck ie. All valid brainf
 ## Syntax 
 This assumes you do not know any of the syntax of the original brainfuck.
 
-blaskdlask
+Brainfuck++, like the original stimualtes a tape of cells, which are 8-bit ints. The base commands are:
+1. `+` - Add
+2. `-` - Subtract
+3. `e` - Erase/Equals
+4. `<` - Move left
+5. `>` - Move right
+ 
+These commands are the most basic commands in bfpp, due to showing simmilar behavour. They can be executed with or eithout an argument. If no argument is provided, the Add adds one to the current cell, Subtract subtracts one, Erase/Equals sets the cell to zero, Move left moves the tape to the left, Move right moves it to the right.
