@@ -20,7 +20,11 @@ These commands are the most basic commands in bfpp, due to showing simmilar beha
 
 As for commands with arguments. Arguments are simply numerical values. If Add/Substract has an argument than it adds/subtracts that number from the cell(`+65-3` <- example) Erase/Equals when provided with an argument, sets the current cell to that value, hence the name Erase/Equals. Move left and right move the tape by the number of cells provided by the argument. You can still chain commands like in the original bf(`++++++`), however just providing arguments is both more readable and faster, both to write and run.
 
-
 ### IO commands
 
 Brainfuck++ also has a pair of two IO commands, The print `.` and the input `,`. `.` prints the value of the current cell as an ASCII character to the console, `,` halts the program requests a single character and sets the value of the cell to ASCII value of the character inputed. This pretty much it.
+
+### Loops
+
+The last commands that bfpp shares with bf are the loop markers `[]`. If the value of the current cell is bigger than 0 that the code inside the brackets is looped. I inteded to also add brackets for an 'if' block, however an 'if' block is just a loop is just a loop that repeats once.
+
