@@ -8,7 +8,7 @@ Brainfuck++ is meant to be a superset of original brainfuck ie. All valid brainf
 This assumes you do not know any of the syntax of the original brainfuck.
 
 ### Basic commands
----
+
 Brainfuck++, like the original stimualtes a tape of cells, which are 8-bit ints. The base commands are:
 1. `+` - Add
 2. `-` - Subtract
@@ -19,3 +19,8 @@ Brainfuck++, like the original stimualtes a tape of cells, which are 8-bit ints.
 These commands are the most basic commands in bfpp, due to showing simmilar behavour. They can be executed with or without an argument. If no argument is provided, the Add adds one to the current cell, Subtract subtracts one, Erase/Equals sets the cell to zero, Move left moves the tape to the left, Move right moves it to the right. (Argumentless commands look like this: `+-e<>`)
 
 As for commands with arguments. Arguments are simply numerical values. If Add/Substract has an argument than it adds/subtracts that number from the cell(`+65-3` <- example) Erase/Equals when provided with an argument, sets the current cell to that value, hence the name Erase/Equals. Move left and right move the tape by the number of cells provided by the argument. You can still chain commands like in the original bf(`++++++`), however just providing arguments is both more readable and faster, both to write and run.
+
+
+### IO commands
+
+Brainfuck++ also has a pair of two IO commands, The print `.` and the input `,`. `.` prints the value of the current cell as an ASCII character to the console, `,` halts the program requests a single character and sets the value of the cell to ASCII value of the character inputed. This pretty much it.
