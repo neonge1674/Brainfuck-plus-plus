@@ -8,6 +8,7 @@ Brainfuck++ is meant to be a superset of original brainfuck ie. All valid brainf
 This assumes you do not know any of the syntax of the original brainfuck.
 
 ### Basic commands
+---
 Brainfuck++, like the original stimualtes a tape of cells, which are 8-bit ints. The base commands are:
 1. `+` - Add
 2. `-` - Subtract
