@@ -33,7 +33,7 @@ typedef enum {
 typedef struct {
     TOKEN token;
     union {
-        int numb;
+        unsigned char numb;
         char name[64];
     } value;
 
