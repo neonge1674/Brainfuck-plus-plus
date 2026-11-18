@@ -15,7 +15,7 @@
 int stack[MAXCODESIZE], stackp; //to store locations of still-unmatched '['s.
 int proc_stack[MAXCODESIZE], proc_stackp; 
 char code[MAXCODESIZE]; int codep, codelength; //copy of the program we'll read into memory.
-short int array[ARRAYSIZE]; int memp; //the memory used by the brainfuck program.
+unsigned char array[ARRAYSIZE]; int memp; //the memory used by the brainfuck program.
 int targets[MAXCODESIZE]; //to save matching '[' for each ']' and vice versa.
 int proc_targets[MAXCODESIZE];
 int proc_return;
