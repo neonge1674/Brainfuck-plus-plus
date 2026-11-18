@@ -28,3 +28,10 @@ Brainfuck++ also has a pair of two IO commands, The print `.` and the input `,`.
 
 The last commands that bfpp shares with bf are the loop markers `[]`. If the value of the current cell is bigger than 0 that the code inside the brackets is looped. I inteded to also add brackets for an 'if' block, however an 'if' block is just a loop is just a loop that repeats once.
 
+### The stacks
+
+There are two stacks in bfpp, the value stack and adress stack. The value stack holds 8-bit values, while the adress stack hold the adresses to cells. The `r` and `R` commands push either the value or the adress of the current cell into the appropriate stack. The top of the stack can be popped and used. The `G` command popos the value from the adress stack and makes the tape point to that cell. The `g` command pops a value from the value stack and uses it as an argument with one of the basic commands(`eg` <- example).
+
+### Variables
+The current cell can be tagged as a variable(`V%NAME%`). This will store the current position of the cell on the tape. The variable can be provided to commands, by using it's name as an argument(`+%NAME%` name must be wrapped in `%`). If it's passed to one of the basic commands then the cell's value is used as an arguemnt. If the command is `G` then the tape moves over the the cell labled by the variable.  
+
