@@ -17,20 +17,12 @@ typedef enum {
     NORMAL,
     COMMENTING,
     NAMING,
+    ASCII
 } LEXER_STATE;
 
 LEXER_STATE state = NORMAL;
 
 int nameI = 0;
-
-bool isNumbChar(char c) 
-{
-    if (c == '0' || c == '1' || c == '2' || c == '3'
-        || c == '4' || c == '5' || c == '6' || c == '7'
-        || c == '8' || c == '9') return true;
-    else return false;
-}
-
 
 
 Coin* lex(char* code, int len) 
@@ -64,6 +56,11 @@ Coin* lex(char* code, int len)
         
         continue;
     }
+
+    if (state == ASCII) {
+        NUMBER_PUSH((unsigned char)code[i])
+        state = NORMAL;
+    }
     
     switch (code[i]) 
     {
@@ -88,10 +85,11 @@ Coin* lex(char* code, int len)
         case 'V' : PUSH_COIN(VAR_DECLARE) break;
         case 'P' : PUSH_COIN(PROC_DECLARE) break;
         case 'p' : PUSH_COIN(PROC) break;
-        
+        case 'A' : PUSH_COIN(ARRAY) break;
+         
         case '#' : state = COMMENTING; break;
         case '%' : PUSH_COIN(VAR_NAME) state = NAMING; break;
-        
+        case '\'' : state = ASCII; break;
 
 
         case '0' : NUMBER_PUSH(0)  break;
